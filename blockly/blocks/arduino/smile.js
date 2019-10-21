@@ -1,41 +1,77 @@
 /*
     author": Nicolas Arndt for SMILE @ DDI University Oldenburg
     for more information: https://www.smile-smart-it.de
-    Generator for the new Blocks
+    add new Blocks for SMILE Workshops
 */
 
 'use strict';
 
-goog.provide('Blockly.Arduino.smile');
+goog.provide('Blockly.Blocks.smile'); /* Die Blöcke die durch diese Datei zur verfügung gestellt werden */
 
-goog.require('Blockly.Arduino');
+goog.require('Blockly.Blocks');
 
+Blockly.Blocks.smile.HUE = "#e75b21"; /* Default Farbe der Blöcke */
 
 /* Intialisieren der LED(s) an Pin */
-Blockly.Arduino['smile_led_init'] = function(block) {
-  var value_num_led_init = Blockly.Arduino.valueToCode(block, 'num_led_init', Blockly.Arduino.ORDER_ATOMIC);
-  var dropdown_pin_led_init = block.getFieldValue('pin_led_init');
-  Blockly.Arduino.includes_['smile_led'] = '#include <FastLED.h>';
-  Blockly.Arduino.definitions_['smile_led'] = '#define NUM_LEDS '+value_num_led_init+'\n#define DATA_PIN '+dropdown_pin_led_init+'\nCRGB leds[NUM_LEDS];';
-  Blockly.Arduino.setups_['smile_led_init'] = 'FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);';
-  var code = '';
-  return code;
+Blockly.Blocks['smile_led_init'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Verbinde");
+    this.appendValueInput("num_led_init")
+        .setCheck('Number')
+    this.appendDummyInput()
+        .appendField("LED(s) an Pin")
+        .appendField(new Blockly.FieldDropdown(
+          Blockly.Arduino.Boards.selected.digitalPins), "pin_led_init");
+    this.setInputsInline();
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip("tooltip");
+    this.setHelpUrl("webseite");
+  }
 };
-
 /* Setze LED auf RGB-Wert */
-Blockly.Arduino['smile_led_rgb'] = function(block) {
-  var value_num = Blockly.Arduino.valueToCode(block, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
-  var value_red = Blockly.Arduino.valueToCode(block, 'RED', Blockly.Arduino.ORDER_ATOMIC);
-  var value_green = Blockly.Arduino.valueToCode(block, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
-  var value_blue = Blockly.Arduino.valueToCode(block, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
-
-  var code = 'leds[int('+value_num+')] = CRGB(int('+value_red+'), int('+value_green+'), int('+value_blue+'));\nFastLED.show();\n';
-  return code;
+Blockly.Blocks['smile_led_rgb'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Setze LED");
+    this.appendValueInput("NUM")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("auf:");
+    this.appendValueInput("RED")
+        .setCheck("Number")
+        .appendField("rot");
+    this.appendValueInput("GREEN")
+        .setCheck("Number")
+        .appendField("grün");
+    this.appendValueInput("BLUE")
+        .setCheck("Number")
+        .appendField("blau");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
 };
 /* Setze LED auf HEX-Wert */
-Blockly.Arduino['smile_led_hex'] = function(block) {
-  var value_num = Blockly.Arduino.valueToCode(block, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
-  var value_hex = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_ATOMIC);
-  var code = '...';
-  return code;
+Blockly.Blocks['smile_led_hex'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Setze LED");
+    this.appendValueInput("NUM")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("auf:");
+    this.appendValueInput("COLOR");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
 };
