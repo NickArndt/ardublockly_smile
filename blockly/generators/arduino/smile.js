@@ -32,10 +32,9 @@ Blockly.Arduino['smile_led_rgb'] = function(block) {
   var code = 'leds[int('+value_num+')] = CRGB(int('+value_red+'), int('+value_green+'), int('+value_blue+'));\nFastLED.show();\n';
   return code;
 };
-/* Setze LED auf HEX-Wert */
 Blockly.Arduino['smile_led_hex'] = function(block) {
   var value_num = Blockly.Arduino.valueToCode(block, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
-  var value_hex = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_ATOMIC);
-  var code = '...';
+  var text_color = block.getFieldValue('COLOR');
+  var code = 'leds[0] = 0x'+text_color+';\nFastLED.show();\n';
   return code;
 };

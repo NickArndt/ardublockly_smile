@@ -268,11 +268,6 @@ Ardublockly.TOOLBOX_XML =
 '            <field name="NUM">0</field>' +
 '          </block>' +
 '        </value>' +
-'        <value name="COLOR">' +
-'          <block type="text">' +
-'            <field name="TEXT">00FF00</field>' +
-'          </block>' +
-'        </value>' +
 '      </block>' +
 '   </category>' +
 '</xml>';

@@ -62,11 +62,11 @@ Blockly.Blocks['smile_led_hex'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Setze LED");
-    this.appendValueInput("NUM")
-        .setCheck(null);
+    this.appendValueInput("NUM");
     this.appendDummyInput()
-        .appendField("auf:");
-    this.appendValueInput("COLOR");
+        .appendField("auf Hex-Wert: ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("00FF00"), "COLOR");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
