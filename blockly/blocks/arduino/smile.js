@@ -16,11 +16,11 @@ Blockly.Blocks.smile.HUE = "#e75b21"; /* Default Farbe der Blöcke */
 Blockly.Blocks['smile_led_init'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Verbinde");
+        .appendField(Blockly.Msg.SMILE_LED_INIT_INIT);
     this.appendValueInput("num_led_init")
         .setCheck('Number')
     this.appendDummyInput()
-        .appendField("LED(s) an Pin")
+        .appendField(Blockly.Msg.SMILE_LED_INIT_PIN)
         .appendField(new Blockly.FieldDropdown(
           Blockly.Arduino.Boards.selected.digitalPins), "pin_led_init");
     this.setInputsInline();
@@ -35,20 +35,20 @@ Blockly.Blocks['smile_led_init'] = {
 Blockly.Blocks['smile_led_rgb'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Setze LED");
+        .appendField(Blockly.Msg.SMILE_LED_SET);
     this.appendValueInput("NUM")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("auf:");
+        .appendField(Blockly.Msg.SMILE_LED_AT);
     this.appendValueInput("RED")
         .setCheck("Number")
-        .appendField("rot");
+        .appendField(Blockly.Msg.COLOUR_RGB_RED);
     this.appendValueInput("GREEN")
         .setCheck("Number")
-        .appendField("grün");
+        .appendField(Blockly.Msg.COLOUR_RGB_GREEN);
     this.appendValueInput("BLUE")
         .setCheck("Number")
-        .appendField("blau");
+        .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -61,10 +61,10 @@ Blockly.Blocks['smile_led_rgb'] = {
 Blockly.Blocks['smile_led_hex'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Setze LED");
+        .appendField(Blockly.Msg.SMILE_LED_SET);
     this.appendValueInput("NUM");
     this.appendDummyInput()
-        .appendField("auf Hex-Wert: ");
+        .appendField(Blockly.Msg.SMILE_LED_AT_HEX);
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("00FF00"), "COLOR");
     this.setInputsInline(true);
