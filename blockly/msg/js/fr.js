@@ -506,6 +506,11 @@ Blockly.Msg.ARD_TYPE_UNDEF = "Non défini";
 Blockly.Msg.ARD_VAR_AS = "comme";
 Blockly.Msg.ARD_VAR_AS_TIP = "Configure une valeur à un type précis";
 Blockly.Msg.ARD_WRITE_TO = "à";
+Blockly.Msg.CASES_ADD = "Case";  // untranslated
+Blockly.Msg.CASES_CONDITION = "Case (Variable) = ";  // untranslated
+Blockly.Msg.CASES_DO = "Do";  // untranslated
+Blockly.Msg.CASES_SWITCH = "Variable";  // untranslated
+Blockly.Msg.CASES_TIP = "Does something if the condition is true. If there is not a matching case the default function will be executed.";  // untranslated
 Blockly.Msg.NEW_INSTANCE = "New instance...";  // untranslated
 Blockly.Msg.NEW_INSTANCE_TITLE = "New instance name:";  // untranslated
 Blockly.Msg.RENAME_INSTANCE = "Rename instance...";  // untranslated

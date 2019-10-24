@@ -20,6 +20,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="logic_boolean"></block>' +
 '    <block type="logic_null"></block>' +
 '    <block type="logic_ternary"></block>' +
+'    <block type="switch_case"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catLoops" name="Loops" colour="120">' +

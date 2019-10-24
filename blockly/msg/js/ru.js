@@ -506,6 +506,11 @@ Blockly.Msg.ARD_TYPE_UNDEF = "Неопределенное";
 Blockly.Msg.ARD_VAR_AS = "как";
 Blockly.Msg.ARD_VAR_AS_TIP = "Приводит значение к определенному типу";
 Blockly.Msg.ARD_WRITE_TO = "в";
+Blockly.Msg.CASES_ADD = "Case";  // untranslated
+Blockly.Msg.CASES_CONDITION = "Case (Variable) = ";  // untranslated
+Blockly.Msg.CASES_DO = "Do";  // untranslated
+Blockly.Msg.CASES_SWITCH = "Variable";  // untranslated
+Blockly.Msg.CASES_TIP = "Does something if the condition is true. If there is not a matching case the default function will be executed.";  // untranslated
 Blockly.Msg.NEW_INSTANCE = "Новый экземпляр...";
 Blockly.Msg.NEW_INSTANCE_TITLE = "Название нового экземпляра:";
 Blockly.Msg.RENAME_INSTANCE = "Переименовать экземпляры...";

@@ -506,6 +506,11 @@ Blockly.Msg.ARD_TYPE_UNDEF = "Non definito";
 Blockly.Msg.ARD_VAR_AS = "come";
 Blockly.Msg.ARD_VAR_AS_TIP = "Imposta un tipo di valore";
 Blockly.Msg.ARD_WRITE_TO = "a";
+Blockly.Msg.CASES_ADD = "Case";  // untranslated
+Blockly.Msg.CASES_CONDITION = "Case (Variable) = ";  // untranslated
+Blockly.Msg.CASES_DO = "Do";  // untranslated
+Blockly.Msg.CASES_SWITCH = "Variable";  // untranslated
+Blockly.Msg.CASES_TIP = "Does something if the condition is true. If there is not a matching case the default function will be executed.";  // untranslated
 Blockly.Msg.NEW_INSTANCE = "Nuova istanza...";
 Blockly.Msg.NEW_INSTANCE_TITLE = "Nuovo nome dell'istanza:";
 Blockly.Msg.RENAME_INSTANCE = "Rinomina istanza...";

@@ -506,6 +506,11 @@ Blockly.Msg.ARD_TYPE_UNDEF = "Ongedefineerd";
 Blockly.Msg.ARD_VAR_AS = "als";
 Blockly.Msg.ARD_VAR_AS_TIP = "Wijzigt de waarde in het gegeven type";
 Blockly.Msg.ARD_WRITE_TO = "waarde";
+Blockly.Msg.CASES_ADD = "Case";  // untranslated
+Blockly.Msg.CASES_CONDITION = "Case (Variable) = ";  // untranslated
+Blockly.Msg.CASES_DO = "Do";  // untranslated
+Blockly.Msg.CASES_SWITCH = "Variable";  // untranslated
+Blockly.Msg.CASES_TIP = "Does something if the condition is true. If there is not a matching case the default function will be executed.";  // untranslated
 Blockly.Msg.NEW_INSTANCE = "Nieuw object...";
 Blockly.Msg.NEW_INSTANCE_TITLE = "Nieuwe objectnaam:";
 Blockly.Msg.RENAME_INSTANCE = "Hernoem object...";
