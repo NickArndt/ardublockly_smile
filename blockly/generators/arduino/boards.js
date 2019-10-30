@@ -296,15 +296,8 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
   name: 'Wemos D1',
   description: 'Wemos D1 R2 compatible board',
   compilerFlag: 'esp8266:esp8266:generic',
-<<<<<<< HEAD
   analogPins: Blockly.Arduino.Boards.generateAnalogIo(0, 0),
   digitalPins: Blockly.Arduino.Boards.generateDigitalIo(0, 8),
-=======
-  analogPins: [['A0', 'A0']],
-  digitalPins: [['D0', 'D0'], ['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'],
-                ['D4', 'D4'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7'],
-                ['D8', 'D8']],
->>>>>>> 9bd6e2f216fb984a4602a5e055207ad6164aa67b
   pwmPins:  [['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'], ['D4', 'D4'],
              ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7'], ['D8', 'D8']],
   serial: [['serial', 'Serial']],
