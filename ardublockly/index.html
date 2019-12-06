@@ -347,7 +347,8 @@
     window.addEventListener('load', function load(event) {
       window.removeEventListener('load', load, false);
       Ardublockly.init();
-      Ardublockly.loadServerXmlFile('../start.xml');
+      /* Loading the startblock from start.xml */
+      Ardublockly.loadServerXmlFile('../ardublockly/start.xml');
     });
   </script>
 </body>

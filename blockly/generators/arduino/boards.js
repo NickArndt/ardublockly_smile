@@ -296,8 +296,9 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
   name: 'Wemos D1',
   description: 'Wemos D1 R2 compatible board',
   compilerFlag: 'esp8266:esp8266:generic',
-  analogPins: Blockly.Arduino.Boards.generateAnalogIo(0, 0),
-  digitalPins: Blockly.Arduino.Boards.generateDigitalIo(0, 8),
+  analogPins: [['A0', 'A0']],
+  digitalPins: [['D0', 'D0'], ['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'],
+                ['D4', 'D4'], ['D5', 'D5'], ['D6', 'D7'], ['D8', 'D8']],
   pwmPins:  [['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'], ['D4', 'D4'],
              ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7'], ['D8', 'D8']],
   serial: [['serial', 'Serial']],
@@ -315,7 +316,7 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
 };
 
 /** Set default profile to Arduino standard-compatible board */
-Blockly.Arduino.Boards.selected = Blockly.Arduino.Boards.profiles.uno;
+Blockly.Arduino.Boards.selected = Blockly.Arduino.Boards.profiles.esp8266_wemos_d1;
 
 /**
  * Changes the Arduino board profile selected, which trigger a refresh of the
