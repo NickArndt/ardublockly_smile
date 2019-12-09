@@ -10,15 +10,14 @@ goog.provide('Blockly.Blocks.smile'); /* Die Blöcke die durch diese Datei zur v
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.smile.HUE = "#e75b21"; /* Default Farbe der Blöcke */
+Blockly.Blocks.smile.HUE = "#e75b21"; /* Default Farbe der SMILE-Blöcke */
 
 /* Intialisieren der LED(s) an Pin */
 Blockly.Blocks['smile_led_init'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SMILE_LED_INIT_INIT);
     this.appendValueInput("num_led_init")
         .setCheck('Number')
+        .appendField(Blockly.Msg.SMILE_LED_INIT_INIT);
     this.appendDummyInput()
         .appendField(Blockly.Msg.SMILE_LED_INIT_PIN)
         .appendField(new Blockly.FieldDropdown(
@@ -34,19 +33,21 @@ Blockly.Blocks['smile_led_init'] = {
 /* Setze LED auf RGB-Wert */
 Blockly.Blocks['smile_led_rgb'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SMILE_LED_SET);
     this.appendValueInput("NUM")
-        .setCheck(null);
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SMILE_LED_SET);
     this.appendDummyInput()
         .appendField(Blockly.Msg.SMILE_LED_AT);
     this.appendValueInput("RED")
+        .setAlign(Blockly.ALIGN_RIGHT)
         .setCheck("Number")
         .appendField(Blockly.Msg.COLOUR_RGB_RED);
     this.appendValueInput("GREEN")
+        .setAlign(Blockly.ALIGN_RIGHT)
         .setCheck("Number")
         .appendField(Blockly.Msg.COLOUR_RGB_GREEN);
     this.appendValueInput("BLUE")
+        .setAlign(Blockly.ALIGN_RIGHT)
         .setCheck("Number")
         .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
     this.setInputsInline(true);
@@ -60,14 +61,29 @@ Blockly.Blocks['smile_led_rgb'] = {
 /* Setze LED auf HEX-Wert */
 Blockly.Blocks['smile_led_hex'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendValueInput("NUM")
+        .setCheck("Number")
         .appendField(Blockly.Msg.SMILE_LED_SET);
-    this.appendValueInput("NUM");
     this.appendDummyInput()
-        .appendField(Blockly.Msg.SMILE_LED_AT_HEX);
-    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_LED_AT_HEX)
         .appendField(new Blockly.FieldTextInput("00FF00"), "COLOR");
     this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Initialisieren eines Wlans mit wifimanager.h */
+Blockly.Blocks['smile_wifi'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_WIFI_INIT);
+    this.appendValueInput("NETWORKNAME")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.SMILE_WIFI_NAME)
+    this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(Blockly.Blocks.smile.HUE);

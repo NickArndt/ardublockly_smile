@@ -103,4 +103,7 @@ loadNewBlocksBody: "Das Laden der neuen XML-Datei ersetzt die aktuellen Blöcke.
   catAudio: "Audio",
   catMotors: "Motoren",
   catComms: "Comms",
+  smile: "SMILE",
+  smile_wifi: "Wlan",
+  smile_Led: "LED(s)"
 };

@@ -102,4 +102,7 @@ Ardublockly.LOCALISED_TEXT = {
   catAudio: "Audio",
   catMotors: "Motors",
   catComms: "Comms",
+  smile: "SMILE",
+  smile_wifi: "Wifi",
+  smile_Led: "LED(s)"
 };

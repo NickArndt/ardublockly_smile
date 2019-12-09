@@ -520,3 +520,5 @@ Blockly.Msg.SMILE_LED_AT_HEX = "auf Hex-Wert:";
 Blockly.Msg.SMILE_LED_INIT_INIT = "Verbinde";
 Blockly.Msg.SMILE_LED_INIT_PIN = "LED(s) an Pin";
 Blockly.Msg.SMILE_LED_SET = "Setze LED";
+Blockly.Msg.SMILE_WIFI_INIT = "Erstelle WLAN-Zugangspunkt";
+Blockly.Msg.SMILE_WIFI_NAME = "Netzwerkname:";

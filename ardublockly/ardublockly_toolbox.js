@@ -233,6 +233,16 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="spi_transfer_return"></block>' +
 '  </category>' +
 /* Ab hier folgen die SMILE-Bloecke */
+'<category id="smile" name="SMILE">' +
+'<category id="smile_wifi" name="Wifi">' +
+'      <block type="smile_wifi">' +
+'         <value name="NETWORKNAME">' +
+'            <shadow type="text">' +
+'            <field name="TEXT">MeineSmarteLampe</field>' +
+'            </shadow>' +
+'         </value>' +
+'      </block>' +
+'   </category>' +
 '<category id="smile_Led" name="LED(s)">' +
 '      <block type="smile_led_init">' +
 '        <value name="num_led_init">' +
@@ -271,4 +281,5 @@ Ardublockly.TOOLBOX_XML =
 '        </value>' +
 '      </block>' +
 '   </category>' +
+' </category>' +
 '</xml>';

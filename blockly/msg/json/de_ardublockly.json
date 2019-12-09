@@ -130,5 +130,7 @@
 	"SMILE_LED_INIT_PIN": "LED(s) an Pin",
 	"SMILE_LED_SET": "Setze LED",
 	"SMILE_LED_AT": "auf:",
-	"SMILE_LED_AT_HEX": "auf Hex-Wert:"
+	"SMILE_LED_AT_HEX": "auf Hex-Wert:",
+	"SMILE_WIFI_INIT": "Erstelle WLAN-Zugangspunkt",
+	"SMILE_WIFI_NAME": "Netzwerkname:"
 }
