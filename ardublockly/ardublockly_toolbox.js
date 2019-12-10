@@ -237,9 +237,9 @@ Ardublockly.TOOLBOX_XML =
 '<category id="smile_wifi" name="Wifi">' +
 '      <block type="smile_wifi">' +
 '         <value name="NETWORKNAME">' +
-'            <shadow type="text">' +
+'            <block type="text">' +
 '            <field name="TEXT">MeineSmarteLampe</field>' +
-'            </shadow>' +
+'            </block>' +
 '         </value>' +
 '      </block>' +
 '   </category>' +

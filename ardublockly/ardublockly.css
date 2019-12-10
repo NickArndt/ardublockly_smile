@@ -101,12 +101,12 @@ ul.side-nav li.logo:hover {
 }
 ul.side-nav li.side-menu-end {
   background-color: #eeeeee;
-  border-radius: 0px 0px 25px 0px;
-  border-left: 4px solid #ffffff;
-  border-bottom: 4px solid #dddddd;
-  border-right: 4px solid #dddddd;
-  border-bottom: 4px solid #dddddd;
-  line-height: 25px;
+  border-radius: 0px 0px 0px 0px;
+  border-left: 0px solid #ffffff;
+  border-bottom: 0px solid #dddddd;
+  border-right: 0px solid #dddddd;
+  border-bottom: 0px solid #dddddd;
+  line-height: 0px;
 }
 
 /************************************/
@@ -785,11 +785,11 @@ ul.side-nav li {
   background-color: #eeeeee;
 }
 ul.side-nav li {
-  background-color: #eeeeee;
+  background-color: #ffffff;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-right: 2px solid #dddddd;
+  border-right: 2px solid #ffffff;
   border-left: 2px solid #ffffff;
 }
 ul.side-nav li ul li ul {
