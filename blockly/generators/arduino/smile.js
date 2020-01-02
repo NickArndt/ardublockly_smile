@@ -84,8 +84,8 @@ Blockly.Arduino['smile_led_fade'] = function(block) {
 /* Initialisiert das Display */
 Blockly.Arduino['smile_display_init'] = function(block) {
   Blockly.Arduino.includes_['smile_display_init'] = '#include <SPI.h>\n#include <Adafruit_GFX.h>\n#include <Adafruit_SSD1306.h>';
-  Blockly.Arduino.definitions_['smile_display_init'] = '#define OLED_RESET 0';
-  Blockly.Arduino.userFunctions_['smile_display_init'] = 'Adafruit_SSD1306 display(OLED_RESET);';
+  Blockly.Arduino.definitions_['smile_display_init'] = '#define SCREEN_WIDTH 128\n#define SCREEN_HEIGHT 64\n#define OLED_RESET 0';
+  Blockly.Arduino.userFunctions_['smile_display_init'] = 'Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);';
   Blockly.Arduino.setups_['smile_display_init'] = 'display.begin(SSD1306_SWITCHCAPVCC, 0x3C);\n  display.clearDisplay();\n  display.display();\n  display.setTextColor(WHITE);\n  display.setTextSize(1);';
   var code = '';
   return code;
