@@ -251,11 +251,18 @@ Ardublockly.TOOLBOX_XML =
 '          </block>' +
 '        </value>' +
 '      </block>' +
-'      <block type="smile_led_rgb">' +
-'         <value name="NUM">' +
+'     <block type="smile_led_brightness">' +
+'         <value name="led_brightness">' +
 '          <block type="math_number">' +
 '            <field name="NUM">0</field>' +
 '          </block>' +
+'        </value>' +
+'     </block>' +
+'     <block type="smile_led_rgb">' +
+'        <value name="NUM">' +
+'         <block type="math_number">' +
+'           <field name="NUM">0</field>' +
+'         </block>' +
 '        </value>' +
 '        <value name="RED">' +
 '          <block type="math_number">' +
@@ -279,6 +286,78 @@ Ardublockly.TOOLBOX_XML =
 '            <field name="NUM">0</field>' +
 '          </block>' +
 '        </value>' +
+'      </block>' +
+'      <block type="smile_led_colour">' +
+'         <value name="position">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'      </block>' +
+'     <block type="smile_led_fade">' +
+'        <value name="position">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'         <value name="fromRed">' +
+'          <block type="math_number">' +
+'            <field name="NUM">255</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="fromGreen">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="fromBlue">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="toRed">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="toGreen">' +
+'          <block type="math_number">' +
+'            <field name="NUM">255</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="toBlue">' +
+'          <block type="math_number">' +
+'            <field name="NUM">0</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="sec">' +
+'          <block type="math_number">' +
+'            <field name="NUM">10</field>' +
+'          </block>' +
+'        </value>' +
+'     </block>' +
+'   </category>' +
+'   <category id="smile_display" name="Display">' +
+'      <block type="smile_display_init">' +
+'      </block>' +
+'      <block type="smile_display_write">' +
+'         <value name="displayText">' +
+'           <block type="text">' +
+'             <field name="text">Text</field>' +
+'           </block>' +
+'        </value>' +
+'        <value name="xPosition">' +
+'          <block type="math_number">' +
+'            <field name="NUM">32</field>' +
+'          </block>' +
+'        </value>' +
+'        <value name="yPosition">' +
+'          <block type="math_number">' +
+'            <field name="NUM">9</field>' +
+'          </block>' +
+'        </value>' +
+'      </block>' +
+'      <block type="smile_display_clear">' +
 '      </block>' +
 '   </category>' +
 ' </category>' +

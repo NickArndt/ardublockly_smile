@@ -132,5 +132,14 @@
 	"SMILE_LED_AT": "auf:",
 	"SMILE_LED_AT_HEX": "auf Hex-Wert:",
 	"SMILE_WIFI_INIT": "Erstelle WLAN-Zugangspunkt",
-	"SMILE_WIFI_NAME": "Netzwerkname:"
+	"SMILE_WIFI_NAME": "Netzwerkname:",
+	"SMILE_LED_BRIGHT": "Setze Helligkeit auf",
+	"SMILE_LED_FADE": "Überblende LED",
+	"SMILE_LED_FADE_FROM": "von",
+	"SMILE_LED_FADE_TO": "zu",
+	"SMILE_LED_FADE_SEC": "Sekunden",
+	"SMILE_DISPLAY_INIT": "Verbinde Display",
+	"SMILE_DISPLAY_WRITE": "Schreibe",
+	"SMILE_DISPLAY_POS": "an Postition",
+	"SMILE_DISPLAY_CLEAR": "Leere Display"
 }

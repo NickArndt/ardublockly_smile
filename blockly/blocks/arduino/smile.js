@@ -82,8 +82,123 @@ Blockly.Blocks['smile_wifi'] = {
         .appendField(Blockly.Msg.SMILE_WIFI_INIT);
     this.appendValueInput("NETWORKNAME")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.SMILE_WIFI_NAME)
+        .appendField(Blockly.Msg.SMILE_WIFI_NAME);
     this.setInputsInline(false);
+    this.setPreviousStatement(true)
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Setze LED Farbe mit Colour Picker */
+Blockly.Blocks['smile_led_colour'] = {
+  init: function() {
+    this.appendValueInput("position")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SMILE_LED_SET);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_LED_AT)
+        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Setze die Helligkeit der LED */
+Blockly.Blocks['smile_led_brightness'] = {
+  init: function() {
+    this.appendValueInput("led_brightness")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SMILE_LED_BRIGHT);
+    this.appendDummyInput()
+        .appendField("(0...255)");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Fading der LED */
+Blockly.Blocks['smile_led_fade'] = {
+  init: function() {
+    this.appendValueInput("position")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.SMILE_LED_FADE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_LED_FADE_FROM);
+    this.appendValueInput("fromRed")
+        .setCheck("Number");
+    this.appendValueInput("fromGreen")
+        .setCheck("Number");
+    this.appendValueInput("fromBlue")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_LED_FADE_TO);
+    this.appendValueInput("toRed")
+        .setCheck("Number");
+    this.appendValueInput("toGreen")
+        .setCheck("Number");
+    this.appendValueInput("toBlue")
+        .setCheck("Number")
+    this.appendDummyInput()
+        .appendField("in");
+    this.appendValueInput("sec")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_LED_FADE_SEC);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Initialisiert das Display */
+Blockly.Blocks['smile_display_init'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_DISPLAY_INIT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Gibt Text auf dem Display aus */
+Blockly.Blocks['smile_display_write'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_DISPLAY_WRITE);
+    this.appendValueInput("displayText")
+        .setCheck("Text");
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_DISPLAY_POS)
+        .appendField(" x:");
+    this.appendValueInput("xPosition")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("y:");
+    this.appendValueInput("yPosition")
+        .setCheck("Number");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
+/* Löscht die Displayanzeige */
+Blockly.Blocks['smile_display_clear'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.SMILE_DISPLAY_CLEAR)
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(Blockly.Blocks.smile.HUE);

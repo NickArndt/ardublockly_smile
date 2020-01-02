@@ -132,5 +132,14 @@
 	"SMILE_LED_AT": "at:",
 	"SMILE_LED_AT_HEX": "on hex value:",
 	"SMILE_WIFI_INIT": "Initialize Wifi Access Point",
-	"SMILE_WIFI_NAME": "Networkname:"
+	"SMILE_WIFI_NAME": "Networkname:",
+	"SMILE_LED_BRIGHT": "Set brightness to",
+	"SMILE_LED_FADE": "Fade LED",
+	"SMILE_LED_FADE_FROM": "from",
+	"SMILE_LED_FADE_TO": "to",
+	"SMILE_LED_FADE_SEC": "seconds",
+	"SMILE_DISPLAY_INIT": "Connect display",
+	"SMILE_DISPLAY_WRITE": "Write",
+	"SMILE_DISPLAY_POS": "at postition",
+	"SMILE_DISPLAY_CLEAR": "Clear display"
 }
