@@ -234,15 +234,6 @@ Ardublockly.TOOLBOX_XML =
 '  </category>' +
 /* Ab hier folgen die SMILE-Bloecke */
 '<category id="smile" name="SMILE">' +
-'<category id="smile_wifi" name="Wifi">' +
-'      <block type="smile_wifi">' +
-'         <value name="NETWORKNAME">' +
-'            <block type="text">' +
-'            <field name="TEXT">MeineSmarteLampe</field>' +
-'            </block>' +
-'         </value>' +
-'      </block>' +
-'   </category>' +
 '<category id="smile_Led" name="LED(s)">' +
 '      <block type="smile_led_init">' +
 '        <value name="num_led_init">' +
@@ -360,5 +351,24 @@ Ardublockly.TOOLBOX_XML =
 '      <block type="smile_display_clear">' +
 '      </block>' +
 '   </category>' +
+'      <block type="smile_wifi">' +
+'         <value name="NETWORKNAME">' +
+'            <block type="text">' +
+'            <field name="TEXT">MeineSmarteLampe</field>' +
+'            </block>' +
+'         </value>' +
+'      </block>' +
+'      <block type="smile_openweathermap">' +
+'         <value name="location">' +
+'            <shadow type="text">' +
+'            <field name="TEXT">Oldenburg</field>' +
+'            </shadow>' +
+'         </value>' +
+'        <value name="apikey">' +
+'            <shadow type="text">' +
+'            <field name="TEXT"></field>' +
+'            </shadow>' +
+'         </value>' +
+'      </block>' +
 ' </category>' +
 '</xml>';

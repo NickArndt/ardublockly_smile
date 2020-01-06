@@ -45,8 +45,8 @@ Blockly.Arduino['smile_led_hex'] = function(block) {
 Blockly.Arduino['smile_wifi'] = function(block) {
   var text_networkname = Blockly.Arduino.valueToCode(block, 'NETWORKNAME', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.includes_['smile_wifi'] = '#include <WiFiManager.h>';
-  Blockly.Arduino.setups_['smile_wifi'] = 'WiFiManager wifiManager;\n  wifiManager.autoConnect('+text_networkname+');';
-  var code = '';
+  Blockly.Arduino.setups_['smile_wifi'] = 'WiFiManager wifiManager;';
+  var code = 'wifiManager.autoConnect('+text_networkname+');\n';
   return code;
 };
 
@@ -54,7 +54,7 @@ Blockly.Arduino['smile_wifi'] = function(block) {
 Blockly.Arduino['smile_led_colour'] = function(block) {
   var value_position = Blockly.Arduino.valueToCode(block, 'position', Blockly.Arduino.ORDER_ATOMIC);
   var colour_name = block.getFieldValue('COLOR');
-  var code = 'leds[0] = 0x'+colour_name.substr(1,6)+';\nFastLED.show();\n';
+  var code = 'leds[0] = 0x'+colour_name.substring(1,colour_name.length - 0)+';\nFastLED.show();\n';
   return code;
 };
 /* Setze die Helligkeit der LED */
@@ -75,7 +75,22 @@ Blockly.Arduino['smile_led_fade'] = function(block) {
   var value_toblue = Blockly.Arduino.valueToCode(block, 'toBlue', Blockly.Arduino.ORDER_ATOMIC);
   var value_sec = Blockly.Arduino.valueToCode(block, 'sec', Blockly.Arduino.ORDER_ATOMIC);
 
-  Blockly.Arduino.userFunctions_['smile_led_fade'] = 'void fade(int led_position, uint16_t duration, uint16_t delay_val, uint16_t startR, uint16_t startG, uint16_t startB, uint16_t endR, uint16_t endG, uint16_t endB) {\nint16_t redDiff = endR - startR;\nint16_t greenDiff = endG - startG;\nint16_t blueDiff = endB - startB;\nint16_t steps = duration*1000 / delay_val;\nint16_t redValue, greenValue, blueValue;\nfor (int16_t i = 0 ; i < steps - 1 ; ++i) {\n  redValue = (int16_t)startR + (redDiff * i / steps);\n  greenValue = (int16_t)startG + (greenDiff * i / steps);\n  blueValue = (int16_t)startB + (blueDiff * i / steps);\n  leds[led_position]=CRGB(redValue, greenValue, blueValue);\n  FastLED.show();\n  delay(delay_val);\n}\nleds[led_position]=CRGB(endR, endG, endB);\n}';
+  Blockly.Arduino.userFunctions_['smile_led_fade'] = 'void fade(int led_position, uint16_t duration, uint16_t delay_val, uint16_t startR, uint16_t startG, uint16_t startB, uint16_t endR, uint16_t endG, uint16_t endB) {\n'
+    +'int16_t redDiff = endR - startR;\n'
+    +'int16_t greenDiff = endG - startG;\n'
+    +'int16_t blueDiff = endB - startB;\n'
+    +'int16_t steps = duration*1000 / delay_val;\n'
+    +'int16_t redValue, greenValue, blueValue;\n'
+    +'for (int16_t i = 0 ; i < steps - 1 ; ++i) {\n'
+    +'  redValue = (int16_t)startR + (redDiff * i / steps);\n'
+    +'  greenValue = (int16_t)startG + (greenDiff * i / steps);\n'
+    +'  blueValue = (int16_t)startB + (blueDiff * i / steps);\n'
+    +'  leds[led_position]=CRGB(redValue, greenValue, blueValue);\n'
+    +'  FastLED.show();\n'
+    +'  delay(delay_val);\n'
+    +'}\n'
+    +'leds[led_position]=CRGB(endR, endG, endB);\n'
+    +'}';
 
   var code =  'fade(int('+value_position+'),int('+value_sec+'),int(100),int('+value_fromred+'),int('+value_fromgreen+'),int('+value_fromblue+'),int('+value_tored+'),int('+value_togreen+'),int('+value_toblue+'));';
   return code;
@@ -107,11 +122,47 @@ Blockly.Arduino['smile_display_clear'] = function(block) {
   return code;
 };
 
-/* Abrufen der Wetterinformationen über openweathermap.org */
-Blockly.Arduino['smile_get_weather'] = function(block) {
+/* Ruft Wetterinformationen von openweathermap.org ab */
+Blockly.Arduino['smile_openweathermap'] = function(block) {
+  var dropdown_smile_openweathermap = block.getFieldValue('smile_openweathermap');
   var value_location = Blockly.Arduino.valueToCode(block, 'location', Blockly.Arduino.ORDER_ATOMIC);
   var value_apikey = Blockly.Arduino.valueToCode(block, 'apikey', Blockly.Arduino.ORDER_ATOMIC);
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Arduino.ORDER_NONE];
+Blockly.Arduino.includes_['smile_openweathermap'] = '#include <ArduinoJson.h>\nWiFiClient client;\n';
+Blockly.Arduino.userFunctions_['smile_openweathermap'] = 'int getWeatherData(String city, String weatherKey, int dropdown) {\n'
++ 'int WeatherData;\n'
++ '  Serial.print("connecting to "); Serial.println("api.openweathermap.org");\n'
++ '  if (client.connect("api.openweathermap.org", 80)) {\n'
++ '    client.println("GET /data/2.5/weather?q='+value_location.substring(1,value_location.length - 1)+',DE&units=metric&lang=de&APPID='+value_apikey.substring(1,value_apikey.length - 1)+'");\n'
++ '    client.println("Host: api.openweathermap.org");\n'
++ '    client.println("Connection: close");\n'
++ '    client.println();\n'
++ '    } else {\n'
++ '    Serial.println("connection failed");\n'
++ '    return WeatherData = 404;\n'
++ '    }\n'
++ '  const size_t capacity = JSON_ARRAY_SIZE(2) + 2*JSON_OBJECT_SIZE(1) + 2*JSON_OBJECT_SIZE(2) + 2*JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(5) + JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(14) + 360;\n'
++ '  DynamicJsonDocument doc(capacity);\n'
++ '  deserializeJson(doc, client);\n'
++ '  client.stop();\n\n'
++ '  int weatherID = doc["weather"][0]["id"];\n'
++ '  int weatherTemp = doc["main"]["temp"];\n\n'
++ '  switch (dropdown) {\n'
++ '    case 1: WeatherData = weatherID; break;\n'
++ '    case 2: WeatherData = weatherTemp;break;\n'
++ '    default: WeatherData = 404;\n'
++ '  }\n'
++ '  return WeatherData;\n'
++ '}\n';
+
+  var code = ""
+  switch(dropdown_smile_openweathermap) {
+      case "weatherTemp":
+          code = 'getWeatherData('+value_location+','+value_apikey+',2)';
+          break;
+      case "weatherID":
+          code = 'getWeatherData('+value_location+','+value_apikey+',1)';
+          break;
+  }
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

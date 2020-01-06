@@ -206,3 +206,19 @@ Blockly.Blocks['smile_display_clear'] = {
     this.setHelpUrl('webseite');
   }
 };
+/* Ruft Wetterinformationen von openweathermap.org ab */
+Blockly.Blocks['smile_openweathermap'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.SMILE_OPENWEATHERMAP_DROPDOWN_TEMP, "weatherTemp"], [Blockly.Msg.SMILE_OPENWEATHERMAP_DROPDOWN_ID, "weatherID"]]), "smile_openweathermap");
+    this.appendValueInput("location")
+        .appendField(Blockly.Msg.SMILE_OPENWEATHERMAP_FOR);
+    this.appendValueInput("apikey")
+        .appendField(Blockly.Msg.SMILE_OPENWEATHERMAP_APIKEY);
+    this.setInputsInline(true);
+    this.setOutput(true);
+    this.setColour(Blockly.Blocks.smile.HUE);
+    this.setTooltip('tooltip');
+    this.setHelpUrl('webseite');
+  }
+};
