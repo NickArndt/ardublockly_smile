@@ -518,6 +518,7 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Benenne alle '%1' Instanzen um in:";
 Blockly.Msg.SMILE_DISPLAY_CLEAR = "Leere Display";
 Blockly.Msg.SMILE_DISPLAY_INIT = "Verbinde Display";
 Blockly.Msg.SMILE_DISPLAY_POS = "an Postition";
+Blockly.Msg.SMILE_DISPLAY_SIZE = "mit Schriftgröße";
 Blockly.Msg.SMILE_DISPLAY_WRITE = "Schreibe";
 Blockly.Msg.SMILE_LED_AT = "auf:";
 Blockly.Msg.SMILE_LED_AT_HEX = "auf Hex-Wert:";

@@ -337,6 +337,11 @@ Ardublockly.TOOLBOX_XML =
 '             <field name="text">Text</field>' +
 '           </block>' +
 '        </value>' +
+'        <value name="textSize">' +
+'          <block type="math_number">' +
+'            <field name="NUM">1</field>' +
+'          </block>' +
+'        </value>' +
 '        <value name="xPosition">' +
 '          <block type="math_number">' +
 '            <field name="NUM">32</field>' +

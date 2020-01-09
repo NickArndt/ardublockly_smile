@@ -109,10 +109,14 @@ Blockly.Arduino['smile_display_init'] = function(block) {
 /* Gibt Text auf dem Display aus */
 Blockly.Arduino['smile_display_write'] = function(block) {
   var value_displaytext = Blockly.Arduino.valueToCode(block, 'displayText', Blockly.Arduino.ORDER_ATOMIC);
+  var value_textsize = Blockly.Arduino.valueToCode(block, 'textSize', Blockly.Arduino.ORDER_ATOMIC);
   var value_xposition = Blockly.Arduino.valueToCode(block, 'xPosition', Blockly.Arduino.ORDER_ATOMIC);
   var value_yposition = Blockly.Arduino.valueToCode(block, 'yPosition', Blockly.Arduino.ORDER_ATOMIC);
 
-  var code = 'display.setCursor(int(' + value_xposition + '),int(' + value_yposition + '));\ndisplay.println('+value_displaytext+');\ndisplay.display();\n';
+  var code = 'display.setCursor(int(' + value_xposition + '),int(' + value_yposition + '));\n'
+  + 'display.setTextSize('+value_textsize+');\n'
+  + 'display.println('+value_displaytext+');\n'
+  + 'display.display();\n';
   return code;
 };
 

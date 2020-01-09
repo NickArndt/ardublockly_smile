@@ -174,19 +174,20 @@ Blockly.Blocks['smile_display_init'] = {
 /* Gibt Text auf dem Display aus */
 Blockly.Blocks['smile_display_write'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SMILE_DISPLAY_WRITE);
     this.appendValueInput("displayText")
+        .appendField(Blockly.Msg.SMILE_DISPLAY_WRITE)
         .setCheck("Text");
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.SMILE_DISPLAY_POS)
-        .appendField(" x:");
+    this.appendValueInput("textSize")
+        .appendField(Blockly.Msg.SMILE_DISPLAY_SIZE)
+        .setCheck("Number");
     this.appendValueInput("xPosition")
+        .appendField(Blockly.Msg.SMILE_DISPLAY_POS)
+        .appendField(" x:")
         .setCheck("Number");
-    this.appendDummyInput()
-        .appendField("y:");
     this.appendValueInput("yPosition")
+        .appendField("y:")
         .setCheck("Number");
+    this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(Blockly.Blocks.smile.HUE);

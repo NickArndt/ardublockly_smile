@@ -140,6 +140,7 @@
 	"SMILE_LED_FADE_SEC": "seconds",
 	"SMILE_DISPLAY_INIT": "Connect display",
 	"SMILE_DISPLAY_WRITE": "Write",
+	"SMILE_DISPLAY_SIZE": "with type size",
 	"SMILE_DISPLAY_POS": "at postition",
 	"SMILE_DISPLAY_CLEAR": "Clear display",
 	"SMILE_OPENWEATHERMAP_DROPDOWN_TEMP": "Temperature",

@@ -518,6 +518,7 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";
 Blockly.Msg.SMILE_DISPLAY_CLEAR = "Clear display";
 Blockly.Msg.SMILE_DISPLAY_INIT = "Connect display";
 Blockly.Msg.SMILE_DISPLAY_POS = "at postition";
+Blockly.Msg.SMILE_DISPLAY_SIZE = "with type size";
 Blockly.Msg.SMILE_DISPLAY_WRITE = "Write";
 Blockly.Msg.SMILE_LED_AT = "at:";
 Blockly.Msg.SMILE_LED_AT_HEX = "on hex value:";

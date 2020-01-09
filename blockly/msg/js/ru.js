@@ -518,6 +518,7 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Переименовать все '%1' эк
 Blockly.Msg.SMILE_DISPLAY_CLEAR = "Clear display";  // untranslated
 Blockly.Msg.SMILE_DISPLAY_INIT = "Connect display";  // untranslated
 Blockly.Msg.SMILE_DISPLAY_POS = "at postition";  // untranslated
+Blockly.Msg.SMILE_DISPLAY_SIZE = "with type size";  // untranslated
 Blockly.Msg.SMILE_DISPLAY_WRITE = "Write";  // untranslated
 Blockly.Msg.SMILE_LED_AT = "at:";  // untranslated
 Blockly.Msg.SMILE_LED_AT_HEX = "on hex value:";  // untranslated
