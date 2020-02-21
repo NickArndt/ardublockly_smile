@@ -220,6 +220,6 @@ Blockly.Blocks['smile_openweathermap'] = {
     this.setOutput(true);
     this.setColour(Blockly.Blocks.smile.HUE);
     this.setTooltip('tooltip');
-    this.setHelpUrl('webseite');
+    this.setHelpUrl('https://openweathermap.org/weather-conditions');
   }
 };
